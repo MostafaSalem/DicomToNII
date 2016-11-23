@@ -40,19 +40,19 @@ echo 'Working With IPI-Scan'
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$IPISourceDir/IPI"$(printf "%02d" $i)"_0/SER1
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/a.nii >IPImriConvertOutput.txt
+mri_convert  --split -ot nii   --out_orientation RAS $dataDirScan/IMG00001.dcm  ./tmp/a.nii >IPImriConvertOutput.txt
 
 sudo mv ./tmp/a0000.nii $scanIPIDestinationDir/t1.nii
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$IPISourceDir/IPI"$(printf "%02d" $i)"_0/SER2
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/b.nii >>IPImriConvertOutput.txt
+mri_convert  --split -ot nii   --out_orientation RAS $dataDirScan/IMG00001.dcm  ./tmp/b.nii >>IPImriConvertOutput.txt
 
 sudo mv ./tmp/b0000.nii $scanIPIDestinationDir/flair.nii
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$IPISourceDir/IPI"$(printf "%02d" $i)"_0/SER3
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/c.nii >>IPImriConvertOutput.txt
+mri_convert  --split -ot nii   --out_orientation RAS $dataDirScan/IMG00001.dcm  ./tmp/c.nii >>IPImriConvertOutput.txt
 
 sudo mv ./tmp/c0000.nii $scanIPIDestinationDir/pd.nii
 sudo mv ./tmp/c0001.nii $scanIPIDestinationDir/t2.nii
@@ -61,19 +61,19 @@ echo 'Working With IPI-RScan'
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$IPISourceDir/IPI"$(printf "%02d" $i)"_0R/SER1
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/a.nii >>IPImriConvertOutput.txt
+mri_convert  --split -ot nii   --out_orientation RAS $dataDirScan/IMG00001.dcm  ./tmp/a.nii >>IPImriConvertOutput.txt
 
 sudo mv ./tmp/a0000.nii $scanIPIDestinationDir/t1_rscan.nii
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$IPISourceDir/IPI"$(printf "%02d" $i)"_0R/SER2
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/b.nii >>IPImriConvertOutput.txt
+mri_convert  --split -ot nii   --out_orientation RAS $dataDirScan/IMG00001.dcm  ./tmp/b.nii >>IPImriConvertOutput.txt
 
 sudo mv ./tmp/b0000.nii $scanIPIDestinationDir/flair_rscan.nii
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$IPISourceDir/IPI"$(printf "%02d" $i)"_0R/SER3
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/c.nii >>IPImriConvertOutput.txt
+mri_convert  --split -ot nii   --out_orientation RAS $dataDirScan/IMG00001.dcm  ./tmp/c.nii >>IPImriConvertOutput.txt
 
 sudo mv ./tmp/c0000.nii $scanIPIDestinationDir/pd_rscan.nii
 sudo mv ./tmp/c0001.nii $scanIPIDestinationDir/t2_rscan.nii
@@ -86,20 +86,20 @@ echo 'Working With TPI-Scan'
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$TPISourceDir/TPI"$(printf "%02d" $i)"_0/SER1
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/a.nii >TPImriConvertOutput.txt
+mri_convert  --split -ot nii   --out_orientation RAS $dataDirScan/IMG00001.dcm  ./tmp/a.nii >TPImriConvertOutput.txt
 
 sudo mv ./tmp/a0000.nii $scanTPIDestinationDir/t1.nii
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$TPISourceDir/TPI"$(printf "%02d" $i)"_0/SER2
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/b.nii >>TPImriConvertOutput.txt
+mri_convert  --split -ot nii   --out_orientation RAS $dataDirScan/IMG00001.dcm  ./tmp/b.nii >>TPImriConvertOutput.txt
 
 sudo mv ./tmp/b0000.nii $scanTPIDestinationDir/pd.nii
 sudo mv ./tmp/b0001.nii $scanTPIDestinationDir/t2.nii
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$TPISourceDir/TPI"$(printf "%02d" $i)"_0/SER3
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/c.nii >>TPImriConvertOutput.txt
+mri_convert  --split -ot nii   --out_orientation RAS $dataDirScan/IMG00001.dcm  ./tmp/c.nii >>TPImriConvertOutput.txt
 
 sudo mv ./tmp/c0000.nii $scanTPIDestinationDir/flair.nii
 #----------------------------------------------------------------------------------------------------------------------------
@@ -107,20 +107,20 @@ echo 'Working With TPI-RScan'
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$TPISourceDir/TPI"$(printf "%02d" $i)"_0R/SER1
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/a.nii >>TPImriConvertOutput.txt
+mri_convert  --split -ot nii   --out_orientation RAS $dataDirScan/IMG00001.dcm  ./tmp/a.nii >>TPImriConvertOutput.txt
 
 sudo mv ./tmp/a0000.nii $scanTPIDestinationDir/t1_rscan.nii
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$TPISourceDir/TPI"$(printf "%02d" $i)"_0R/SER2
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/b.nii >>TPImriConvertOutput.txt
+mri_convert  --split -ot nii  --out_orientation RAS  $dataDirScan/IMG00001.dcm  ./tmp/b.nii >>TPImriConvertOutput.txt
 
 sudo mv ./tmp/b0000.nii $scanTPIDestinationDir/pd_rscan.nii
 sudo mv ./tmp/b0001.nii $scanTPIDestinationDir/t2_rscan.nii
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$TPISourceDir/TPI"$(printf "%02d" $i)"_0R/SER3
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/c.nii >>TPImriConvertOutput.txt
+mri_convert  --split -ot nii   --out_orientation RAS $dataDirScan/IMG00001.dcm  ./tmp/c.nii >>TPImriConvertOutput.txt
 
 sudo mv ./tmp/c0000.nii $scanTPIDestinationDir/flair_rscan.nii
 #----------------------------------------------------------------------------------------------------------------------------
@@ -132,20 +132,20 @@ echo 'Working With VPI-Scan'
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$VPISourceDir/VPI"$(printf "%02d" $i)"_0/SER1
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/a.nii >VPImriConvertOutput.txt
+mri_convert  --split -ot nii   --out_orientation RAS $dataDirScan/IMG00001.dcm  ./tmp/a.nii >VPImriConvertOutput.txt
 
 sudo mv ./tmp/a0000.nii $scanVPIDestinationDir/t1.nii
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$VPISourceDir/VPI"$(printf "%02d" $i)"_0/SER2
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/b.nii >>VPImriConvertOutput.txt
+mri_convert  --split -ot nii   --out_orientation RAS $dataDirScan/IMG00001.dcm  ./tmp/b.nii >>VPImriConvertOutput.txt
 
 sudo mv ./tmp/b0000.nii $scanVPIDestinationDir/pd.nii
 sudo mv ./tmp/b0001.nii $scanVPIDestinationDir/t2.nii
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$VPISourceDir/VPI"$(printf "%02d" $i)"_0/SER3
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/c.nii >>VPImriConvertOutput.txt
+mri_convert  --split -ot nii   --out_orientation RAS $dataDirScan/IMG00001.dcm  ./tmp/c.nii >>VPImriConvertOutput.txt
 
 sudo mv ./tmp/c0000.nii $scanVPIDestinationDir/flair.nii
 #----------------------------------------------------------------------------------------------------------------------------
@@ -153,13 +153,13 @@ echo 'Working With VPI-RScan'
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$VPISourceDir/VPI"$(printf "%02d" $i)"_0R/SER1
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/a.nii >>VPImriConvertOutput.txt
+mri_convert  --split -ot nii   --out_orientation RAS $dataDirScan/IMG00001.dcm  ./tmp/a.nii >>VPImriConvertOutput.txt
 
 sudo mv ./tmp/a0000.nii $scanVPIDestinationDir/t1_rscan.nii
 #----------------------------------------------------------------------------------------------------------------------------
 dataDirScan=$VPISourceDir/VPI"$(printf "%02d" $i)"_0R/SER2
 
-mri_convert  --split -ot nii  $dataDirScan/IMG00001.dcm  ./tmp/b.nii >>VPImriConvertOutput.txt
+mri_convert  --split -ot nii   --out_orientation RAS $dataDirScan/IMG00001.dcm  ./tmp/b.nii >>VPImriConvertOutput.txt
 
 sudo mv ./tmp/b0000.nii $scanVPIDestinationDir/flair_rscan.nii
 
