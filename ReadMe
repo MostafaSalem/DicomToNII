@@ -1,0 +1,19 @@
+The Healthy Cases
+In ISI:
+SER1=t1 SER2=flair SER3=pd&t2
+IN TSI:
+SER1=t1 SER2=pd&t2 SER3=flair
+IN VSI:
+SER1=t1 SER2=pd&t2 SER3=flair
+RSCAN of VSI contains only t1 and flair
+
+
+
+The Patient Cases
+IN IPI:
+SER1=t1 SER2=flair SER3=pd&t2
+IN TPI:
+SER1=t1 SER2=pd&t2 SER3=flair
+IN VPI:
+SER1=t1 SER2=pd&t2 SER3=flair
+RSCAN of VI contains only t1 and flair
